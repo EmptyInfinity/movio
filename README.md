@@ -5,7 +5,7 @@ Here is used foreman to client and server use mutual node_modules
 
 ### Build
 
-docker-compose run build
+docker-compose build
 
 docker-compose run app yarn install
 

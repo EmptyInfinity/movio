@@ -1,0 +1,29 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input {
+  outline: 0;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  &:focus {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+
+    &:active {
+      box-shadow: none;
+      -webkit-box-shadow: none;
+    }
+  }
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+* {
+  user-select: none;
+}

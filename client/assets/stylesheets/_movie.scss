@@ -1,0 +1,23 @@
+.movie {
+  margin-bottom: 30px;
+  position: relative;
+  // &Year {
+  // font-style: italic;
+  // }
+  &Stars {
+    a {
+      color: $white;
+      &:after {
+        content: ', ';
+      }
+      &:last-child {
+        &:after {
+          content: '';
+        }
+      }
+    }
+  }
+  &TopContent {
+    padding-bottom: 10px;
+  }
+}

@@ -1,0 +1,22 @@
+.tag-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .form-control {
+    width: auto;
+    min-width: 50px;
+  }
+
+  .badge {
+    font-size: 14px;
+    margin: 3px;
+    font-weight: 400;
+  }
+
+  .remove {
+    cursor: pointer;
+    padding-left: 7px;
+  }
+}

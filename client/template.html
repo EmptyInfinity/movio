@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+		<title>Movio</title>
+	</head>
+	<body>
+		<!-- prettier-ignore -->
+		<style>@keyframes loader{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.loader-container{position:fixed;top:0;right:0;left:0;bottom:0;z-index:9999;background:#fff;pointer-events:none;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .5s ease,visibility .5s ease}.loader-container.active{pointer-events:all;opacity:1;visibility:visible}.loader-container svg{animation:loader .75s linear infinite}.loader-title{margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;font-weight:500;font-size:18px;color:#007aff;letter-spacing:.25px}.spinner{display:block;margin:0 auto}</style>
+		<!-- prettier-ignore -->
+		<div class="loader-container active" id="loader"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 38 38"  stroke-linecap="round" stroke-linejoin="round" stroke="#007aff"><g fill="none" fill-rule="evenodd"><g transform="translate(1 1)" stroke-width="4"><circle stroke="#f4f4f7" cx="18" cy="18" r="16"/><path d="M34 18c0-7.92-6.05-16-16-16" transform="rotate(0 18 18)"></path></g></g></svg></div>
+		<!-- prettier-ignore -->
+
+		<!-- Display a message if JS has been disabled on the browser. -->
+		<!-- prettier-ignore -->
+		<noscript>If you're seeing this message, that means <strong>JavaScript has been disabled on your browser</strong>, please <strong>enable JS</strong> to make this app work.</noscript>
+
+		<div id="app"></div>
+		<script type="text/javascript" charset="utf-8">
+			/**
+			 * Full screen spinner
+			 * Show: window.spinner.show()
+			 * Hide: window.spinner.hide()
+			 */
+			window.spinner = (function () {
+				var ACTIVE_CLASS = "active";
+				var SPINNER = document.querySelector(".loader-container");
+
+				function show() {
+					SPINNER.classList.add(ACTIVE_CLASS);
+				}
+
+				function hide() {
+					SPINNER.classList.remove(ACTIVE_CLASS);
+				}
+
+				return {
+					show: show,
+					hide: hide,
+				};
+			})();
+		</script>
+	</body>
+</html>

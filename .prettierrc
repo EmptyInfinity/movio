@@ -1,0 +1,30 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "arrowParens": "always",
+  "useTabs": false,
+  "bracketSpacing": true,
+  "printWidth": 100,
+  "overrides": [
+    {
+      "files": ["*.html"],
+      "options": {
+        "htmlWhitespaceSensitivity": "ignore"
+      }
+    },
+    {
+      "files": ["*.yaml", "*.yml"],
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": ["*.sj"],
+      "options": {
+        "parser": "babel-flow",
+        "semi": true,
+        "tabWidth": 2
+      }
+    }
+  ]
+}

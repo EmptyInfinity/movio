@@ -26,11 +26,5 @@ module.exports = (error, _req, res, _next) => {
 
     return handleStatusError({ message, statusCode: 422 }, res);
   }
-  if (error.code === 11000 || error.code === 11001) {
-    const title = error.message.split('"')[1];
-    const message = `Movie "${title}" is already exists!`;
-
-    return handleStatusError({ message, statusCode: 422 }, res);
-  }
   return internalError(error, res);
 };

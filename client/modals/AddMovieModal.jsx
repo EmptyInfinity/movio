@@ -11,17 +11,19 @@ import ApiMovies from '@app/api/movies';
 const allowedMovieFormats = ['VHS', 'DVD', 'Blu-Ray'];
 const currentYear = new Date().getFullYear();
 
+const form = () => ({
+  title: '',
+  stars: [],
+  releaseYear: currentYear,
+  format: allowedMovieFormats[0],
+});
+
 class AddMovieModal extends React.Component {
   state = {
     error: null,
     inProgress: false,
     show: false,
-    form: {
-      title: '',
-      stars: [],
-      releaseYear: currentYear,
-      format: allowedMovieFormats[0],
-    },
+    form: form()
   };
 
   open = (payload = {}) => {
@@ -31,6 +33,10 @@ class AddMovieModal extends React.Component {
       error: null,
     });
   };
+
+  resetForm = () => {
+    this.setState({form: form()})
+  }
 
   handleDone(result) {
     const { onDone } = this.props;
@@ -56,6 +62,7 @@ class AddMovieModal extends React.Component {
     ApiMovies.save(form)
       .then(({ body }) => {
         this.setState({ inProgress: false });
+        this.resetForm();
         this.handleDone(body);
       })
       .catch((err) => {
